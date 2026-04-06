@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA1-Digest: YJaH8PCjmYNry/CBgiYJyxqtMlE=
+
+Name: lib/arm64-v8a/libandroidx.graphics.path.so
+SHA1-Digest: 18F/y0SzCm7+idQ2qhAqvlLgCKY=
+
+Name: lib/arm64-v8a/libapp.so
+SHA1-Digest: Ikhx6Z0OHjNTmBX9RcEOBr09rjA=
+
+Name: lib/arm64-v8a/libdatastore_shared_counter.so
+SHA1-Digest: CV4WlQQMDBlkJLNYR0xKgZjKOsk=
+
+Name: lib/arm64-v8a/libflutter.so
+SHA1-Digest: 9ftgKHfkKhPOF9AC+Yqmb8HkoLU=
+
+Name: lib/arm64-v8a/libsigner.so
+SHA1-Digest: ETASQyCw8R5YabZoYvaRfnxCmGU=
+
+Name: stamp-cert-sha256
+SHA1-Digest: 5vTkm69vqAbusD/fho7oWwc7j+I=
+
