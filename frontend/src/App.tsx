@@ -138,7 +138,7 @@ function App() {
           
           {/* Logo & Brand */}
           <div className="flex items-center gap-3 cursor-pointer group">
-            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm bg-white flex items-center justify-center border border-gray-100 dark:border-white/10">
+            <div className="w-10 h-10 overflow-hidden flex items-center justify-center">
               <img src="/images/ic_launcher.webp" alt="Learnr App Logo" className="w-full h-full object-cover scale-[1.25]" />
             </div>
             <div className="flex flex-col -gap-1">
