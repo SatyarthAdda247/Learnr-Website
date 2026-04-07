@@ -1,5 +1,6 @@
 import type { ApiSection, ApiItem } from '../api/sections';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 interface SectionRendererProps {
   sections: ApiSection[];
@@ -60,27 +61,65 @@ const SectionBlock = ({ section, onItemClick }: { section: ApiSection; onItemCli
       </section>
     );
   }
-  
+
+  if (section.sectionType === 'FLASH_TYPE') {
+    return (
+      <section>
+        <div className="flex justify-between items-end mb-4 px-1">
+          <h2 className="text-xl font-bold text-[#2D2D2D] dark:text-white tracking-tight flex items-center gap-2">
+            ⚡ {section.sectionName}
+          </h2>
+          <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">Swipe to explore →</span>
+        </div>
+        <div className="flex gap-4 overflow-x-auto pb-6 scrollbar-hide flex-nowrap snap-x px-1">
+          {section.items.map((item, i) => (
+            <FlashCardItem key={item.id || i} item={item} onItemClick={onItemClick} />
+          ))}
+        </div>
+      </section>
+    );
+  }
+
   if (section.sectionType === 'LIST_TYPE' || section.sectionType === 'SUBJECT_TYPE' || section.sectionType === 'WRAPPER_TYPE') {
+    const ICON_MAP: Record<string, { src: string; color: string }> = {
+      'science':     { src: 'https://www.learnr.co.in/Science.png',   color: '#4CAF50' },
+      'english':     { src: 'https://www.learnr.co.in/English.png',   color: '#29B6F6' },
+      'reasoning':   { src: 'https://www.learnr.co.in/reasoning.png', color: '#EC407A' },
+      'maths':       { src: 'https://www.learnr.co.in/Maths.png',     color: '#AB47BC' },
+      'mathematics': { src: 'https://www.learnr.co.in/Maths.png',     color: '#AB47BC' },
+      'geography':   { src: 'https://www.learnr.co.in/Geography.png', color: '#26A69A' },
+    };
+
+    const iconItems = section.items.filter(item => !!ICON_MAP[(item.name || '').toLowerCase()]);
+
     return (
       <section>
         <div className="flex justify-between items-center mb-4 px-1">
-          <h2 className="text-xl font-bold text-[#2D2D2D] tracking-tight">{section.sectionName}</h2>
+          <h2 className="text-xl font-bold text-[#2D2D2D] dark:text-white tracking-tight">{section.sectionName}</h2>
         </div>
-        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide flex-nowrap px-1">
-          {section.items.map((item, i) => (
-            <motion.div 
-              whileHover={{ scale: 1.05, y: -2 }}
-              key={item.id || i}
-              onClick={() => onItemClick(item)}
-              className="flex-shrink-0 flex flex-col items-center cursor-pointer group w-20 md:w-24 bg-white p-3 rounded-2xl shadow-sm border border-gray-100 min-h-[100px]"
-            >
-              <div className="w-12 h-12 flex items-center justify-center mb-2">
-                 <img src={item.iconUrl || item.thumbnailUrl || "/images/ic_launcher.webp"} alt={item.name} className="w-full h-full object-contain" />
-              </div>
-              <span className="font-bold text-center text-[#2D2D2D] text-xs leading-tight line-clamp-2">{item.name}</span>
-            </motion.div>
-          ))}
+        <div className="flex gap-5 overflow-x-auto pb-6 scrollbar-hide flex-nowrap px-1 snap-x">
+          {iconItems.map((item, i) => {
+            const { src, color } = ICON_MAP[(item.name || '').toLowerCase()]!;
+            return (
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                key={item.id || i}
+                onClick={() => onItemClick(item)}
+                className="flex-shrink-0 snap-start cursor-pointer flex flex-col items-center justify-center w-[100px] h-[100px] bg-white rounded-[20px]"
+                style={{ borderBottom: `5px solid ${color}`, boxShadow: `0 8px 20px -4px ${color}55` }}
+              >
+                <img src={src} alt={item.name} className="w-14 h-14 object-contain" />
+                <span className="font-black text-[10px] uppercase tracking-wider mt-1.5" style={{ color }}>{item.name}</span>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="flex justify-center items-center gap-1.5 mt-1 mb-2">
+           <div className="w-4 h-1.5 rounded-full bg-[#4A4D54] dark:bg-gray-400"></div>
+           <div className="w-1.5 h-1.5 rounded-full bg-[#D1D3D8] dark:bg-gray-600"></div>
+           <div className="w-1.5 h-1.5 rounded-full bg-[#D1D3D8] dark:bg-gray-600"></div>
         </div>
       </section>
     );
@@ -90,7 +129,7 @@ const SectionBlock = ({ section, onItemClick }: { section: ApiSection; onItemCli
   return (
     <section>
       <div className="flex justify-between items-end mb-4 px-1">
-        <h2 className="text-xl font-bold text-[#2D2D2D] tracking-tight flex items-center">
+        <h2 className="text-xl font-bold text-[#2D2D2D] dark:text-white tracking-tight flex items-center">
             {section.sectionName}
         </h2>
       </div>
@@ -98,7 +137,7 @@ const SectionBlock = ({ section, onItemClick }: { section: ApiSection; onItemCli
          {section.items.map((item, i) => (
             <div key={item.id || i} onClick={() => onItemClick(item)} className="cursor-pointer group flex-shrink-0 snap-start w-[180px] md:w-[220px]">
                {/* Typical 3:4 or 2:3 Aspect ratio video/chapter card */}
-               <div className="aspect-[3/4] bg-gradient-to-br from-gray-800 to-black rounded-3xl overflow-hidden relative shadow-sm border border-gray-100 group-hover:shadow-md group-hover:border-[#A07E41]/30 transition-all duration-300">
+               <div className="aspect-[3/4] bg-gradient-to-br from-gray-800 to-black rounded-3xl overflow-hidden relative shadow-sm border border-gray-100 dark:border-white/5 group-hover:shadow-md group-hover:border-[#A07E41]/30 transition-all duration-300">
                   
                   {item.thumbnailUrl || item.videoThumbnailUrl ? (
                      <img 
@@ -126,5 +165,35 @@ const SectionBlock = ({ section, onItemClick }: { section: ApiSection; onItemCli
          ))}
       </div>
     </section>
+  );
+};
+
+// Flash Learning card with scroll-triggered magnify effect
+const FlashCardItem = ({ item, onItemClick }: { item: ApiItem; onItemClick: (item: ApiItem) => void }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: '0px -15% 0px -15%' });
+
+  return (
+    <motion.div
+      ref={ref}
+      onClick={() => onItemClick(item)}
+      className="cursor-pointer group flex-shrink-0 snap-start w-[180px] md:w-[210px]"
+      animate={{ scale: isInView ? 1 : 0.82, opacity: isInView ? 1 : 0.5 }}
+      transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+    >
+      <div className="aspect-[3/4] bg-gradient-to-br from-gray-800 to-black rounded-3xl overflow-hidden relative shadow-md border border-gray-700/40 group-hover:border-yellow-500/30 transition-all duration-300">
+        {(item.thumbnailUrl || item.videoThumbnailUrl) ? (
+          <img src={item.thumbnailUrl || item.videoThumbnailUrl} alt={item.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        ) : (
+          <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+            <img src="/images/ic_launcher.webp" className="w-16 h-16 opacity-20 filter grayscale" />
+          </div>
+        )}
+        <div className="absolute inset-x-0 bottom-0 top-1/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+        <div className="absolute bottom-4 left-4 right-4">
+          <h3 className="font-bold text-white text-sm leading-tight line-clamp-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{item.name || item.videoName}</h3>
+        </div>
+      </div>
+    </motion.div>
   );
 };

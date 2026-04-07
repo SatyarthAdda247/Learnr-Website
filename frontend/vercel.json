@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/content-ws/:match*",
-      "destination": "https://stagingapi.ustaad.tv/content-ws/:match*"
+      "destination": "https://api.adda247.com/content-ws/:match*"
     },
     {
       "source": "/(.*)",

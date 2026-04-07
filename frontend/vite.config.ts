@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/content-ws': {
-        target: 'https://stagingapi.ustaad.tv',
+        target: 'https://api.adda247.com',
         changeOrigin: true,
       }
     }
