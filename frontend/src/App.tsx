@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { apiStore } from './api/mockData';
-import { Menu, Sun, Moon } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fetchSections } from './api/sections';
 import { SectionRenderer } from './components/SectionRenderer';
@@ -11,12 +11,6 @@ function App() {
   const [data, setData] = useState<any>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
-    return true; // default
-  });
 
   // Force dark mode always
   useEffect(() => {
