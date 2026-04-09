@@ -32,7 +32,7 @@ const SectionBlock = ({ section, onItemClick }: { section: ApiSection; onItemCli
             <div
               key={item.id || i}
               onClick={() => onItemClick(item)}
-              className="cursor-pointer group flex-shrink-0 snap-start w-[180px] md:w-[220px]"
+              className="cursor-pointer group flex-shrink-0 snap-start w-[171px] md:w-[209px]"
             >
               <div className="aspect-[3/4] bg-gradient-to-br from-gray-800 to-black rounded-3xl overflow-hidden relative shadow-sm border border-white/5 group-hover:border-[#B8964A]/30 transition-all duration-300">
                 {item.thumbnailUrl || item.videoThumbnailUrl ? (
@@ -131,7 +131,7 @@ const SectionBlock = ({ section, onItemClick }: { section: ApiSection; onItemCli
       </div>
       <div className="flex gap-4 overflow-x-auto pb-6 scrollbar-hide flex-nowrap snap-x">
         {section.items.map((item, i) => (
-          <div key={item.id || i} onClick={() => onItemClick(item)} className="cursor-pointer group flex-shrink-0 snap-start w-[180px] md:w-[220px]">
+          <div key={item.id || i} onClick={() => onItemClick(item)} className="cursor-pointer group flex-shrink-0 snap-start w-[171px] md:w-[209px]">
             <div className="aspect-[3/4] bg-gradient-to-br from-gray-800 to-black rounded-3xl overflow-hidden relative border border-white/5 group-hover:border-[#B8964A]/30 transition-all duration-300">
               {item.thumbnailUrl || item.videoThumbnailUrl ? (
                 <img
@@ -161,7 +161,7 @@ const FlashCardItem = ({ item, onItemClick }: { item: ApiItem; onItemClick: (ite
     <motion.div
       ref={ref}
       onClick={() => onItemClick(item)}
-      className="cursor-pointer group flex-shrink-0 snap-start w-[180px] md:w-[210px]"
+      className="cursor-pointer group flex-shrink-0 snap-start w-[171px] md:w-[200px]"
       animate={{ scale: isInView ? 1 : 0.82, opacity: isInView ? 1 : 0.5 }}
       transition={{ type: 'spring', stiffness: 260, damping: 22 }}
     >
