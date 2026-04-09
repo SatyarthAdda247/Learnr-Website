@@ -56,14 +56,14 @@ export const LandingPage = (_: LandingPageProps) => {
 
   // Desktop card dimensions — portrait ratio, capped so it never overflows
   const dGap = containerW * 0.04;
-  const dCardW = containerW * 0.44;
-  const dCardH = Math.min(dCardW * 1.85, 520);
+  const dCardW = containerW * 0.40;
+  const dCardH = Math.min(dCardW * 1.78, 480);
   const dXOffset = containerW / 2 - dCardW / 2 - pos * (dCardW + dGap);
 
-  // Mobile card dimensions — slightly narrower than screen so next card peeks
-  const mGap = 12;
-  const mCardW = mobContainerW * 0.68;
-  const mCardH = Math.min(mCardW * 1.85, 380);
+  // Mobile card dimensions — width-driven, height auto from aspect ratio
+  const mGap = 8;
+  const mCardW = mobContainerW * 0.75;
+  const mCardH = mCardW * 1.95; // ~9:17.5 portrait ratio matching the app screenshots
   const mXOffset = mobContainerW / 2 - mCardW / 2 - mobPos * (mCardW + mGap);
 
   const onDesktopAnimDone = () => {
@@ -99,7 +99,7 @@ export const LandingPage = (_: LandingPageProps) => {
 
   const resetInterval = () => {
     if (intervalRef.current) clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(advance, 3000);
+    intervalRef.current = setInterval(advance, 2000);
   };
 
   useEffect(() => {
@@ -145,7 +145,7 @@ export const LandingPage = (_: LandingPageProps) => {
               className="text-[2.6rem] font-black leading-[1.05] tracking-tighter text-white"
             >
               Roz ek <span className="text-[#B8964A]">kadam,</span><br />
-              sapnon ki <span className="text-[#B8964A]">ore.</span>
+              sapnon ki <span className="text-[#B8964A]">aur.</span>
             </motion.h1>
 
             <motion.p
@@ -189,30 +189,38 @@ export const LandingPage = (_: LandingPageProps) => {
                   className="absolute top-0 h-full flex"
                   style={{ gap: mGap }}
                   animate={{ x: mXOffset }}
-                  transition={mobSkip ? { duration: 0 } : { duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
+                  transition={mobSkip ? { duration: 0 } : { duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
                   onAnimationComplete={onMobAnimDone}
                 >
                   {STRIP.map((src, i) => {
                     const isActive = i === mobPos;
                     return (
-                      <button
+                      <div
                         key={i}
-                        onClick={() => handleMobClick(i)}
-                        className="flex-shrink-0 h-full rounded-2xl overflow-hidden focus:outline-none"
+                        className="flex-shrink-0 h-full rounded-2xl"
                         style={{
                           width: mCardW,
-                          transform: isActive ? 'scale(1)' : 'scale(0.94)',
-                          transition: 'transform 0.4s ease',
-                          boxShadow: isActive ? '0 0 0 2px #B8964A' : 'none',
+                          transform: isActive ? 'scale(1)' : 'scale(0.96)',
+                          transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1)',
+                          boxShadow: 'none',
+                          padding: 0,
                         }}
                       >
-                        <img src={src} alt="" className="w-full h-full object-cover object-top" draggable={false} />
-                      </button>
+                        <button
+                          onClick={() => handleMobClick(i)}
+                          className="w-full h-full rounded-2xl overflow-hidden focus:outline-none block relative"
+                        >
+                          <img src={src} alt="" className="w-full h-full object-contain" draggable={false} />
+                          {!isActive && (
+                            <div className="absolute inset-0 bg-black/25 rounded-2xl pointer-events-none" />
+                          )}
+                        </button>
+                      </div>
                     );
                   })}
                 </motion.div>
-                <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#0B0C10] to-transparent z-10 pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#0B0C10] to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-[#0B0C10] to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-y-0 right-0 w-4 bg-gradient-to-l from-[#0B0C10] to-transparent z-10 pointer-events-none" />
               </>
             )}
           </motion.div>
@@ -235,7 +243,7 @@ export const LandingPage = (_: LandingPageProps) => {
               className="text-6xl xl:text-7xl font-black leading-[1.0] tracking-tighter text-white"
             >
               Roz ek <span className="text-[#B8964A]">kadam,</span><br />
-              sapnon ki <span className="text-[#B8964A]">ore.</span>
+              sapnon ki <span className="text-[#B8964A]">aur.</span>
             </motion.h1>
 
             <motion.p
@@ -284,23 +292,30 @@ export const LandingPage = (_: LandingPageProps) => {
                   className="absolute top-0 h-full flex"
                   style={{ gap: dGap }}
                   animate={{ x: dXOffset }}
-                  transition={skipAnim ? { duration: 0 } : { duration: 0.55, ease: [0.32, 0.72, 0, 1] }}
+                  transition={skipAnim ? { duration: 0 } : { duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
                   onAnimationComplete={onDesktopAnimDone}
                 >
                   {STRIP.map((src, i) => {
                     const isActive = i === pos;
                     return (
-                      <button key={i} onClick={() => handleDesktopClick(i)}
-                        className="flex-shrink-0 h-full rounded-3xl overflow-hidden focus:outline-none cursor-pointer"
+                      <div
+                        key={i}
+                        className="flex-shrink-0 h-full rounded-3xl"
                         style={{
                           width: dCardW,
-                          boxShadow: isActive ? '0 0 0 2px #B8964A, 0 0 40px rgba(184,150,74,0.2)' : '0 0 0 1px rgba(255,255,255,0.06)',
                           transform: isActive ? 'scale(1)' : 'scale(0.93)',
-                          transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+                          transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s cubic-bezier(0.4,0,0.2,1)',
+                          boxShadow: 'none',
+                          padding: 0,
                         }}
                       >
-                        <img src={src} alt="" className="w-full h-full object-cover object-top" draggable={false} />
-                      </button>
+                        <button
+                          onClick={() => handleDesktopClick(i)}
+                          className="w-full h-full rounded-3xl overflow-hidden focus:outline-none cursor-pointer block"
+                        >
+                          <img src={src} alt="" className="w-full h-full object-contain" draggable={false} />
+                        </button>
+                      </div>
                     );
                   })}
                 </motion.div>

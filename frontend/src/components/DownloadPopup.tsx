@@ -1,10 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Download } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface DownloadPopupProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.adda247.gold';
+// QR code via Google Charts API — encodes the Play Store URL
+const QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(PLAY_URL)}&bgcolor=0B0C10&color=ffffff&margin=10`;
 
 export const DownloadPopup = ({ isOpen, onClose }: DownloadPopupProps) => {
   return (
@@ -16,45 +20,57 @@ export const DownloadPopup = ({ isOpen, onClose }: DownloadPopupProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm pointer-events-auto"
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm pointer-events-auto"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative z-10 w-[90%] max-w-md bg-[#0B0C10] rounded-3xl p-6 shadow-2xl border border-white/5 flex flex-col items-center text-center overflow-hidden pointer-events-auto"
+            className="relative z-10 w-[90%] max-w-sm bg-[#0B0C10] rounded-3xl p-7 shadow-2xl border border-white/8 flex flex-col items-center text-center pointer-events-auto"
           >
-            {/* No background gradient */}
-            
-            <button 
+            <button
               onClick={onClose}
-              className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors z-10"
+              className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors"
             >
-              <X size={20} className="text-gray-400" />
+              <X size={18} className="text-gray-400" />
             </button>
 
-            <img src="/images/learnrlogo.jpeg" alt="Learnr App" className="w-20 h-20 object-cover rounded-2xl mb-4 relative z-10" />
+            {/* App icon */}
+            <img src="/images/learnrlogo.jpeg" alt="Learnr" className="w-16 h-16 object-cover rounded-2xl mb-4" />
 
-            <h3 className="font-black text-2xl tracking-tight text-white mb-2 relative z-10">
-               Switch to the App!
+            {/* Hinglish headline */}
+            <h3 className="font-black text-2xl text-white mb-2 leading-tight">
+              App pe switch karo!
             </h3>
-            
-            <p className="text-gray-400 font-medium text-sm mb-6 leading-relaxed relative z-10">
-              For the best learning experience, to play videos, access mock tests, and track your daily progress seamlessly, please download our app.
+
+            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+              Videos dekhne ke liye, mock tests dene ke liye, aur apni daily progress track karne ke liye — Learnr app download karo.
             </p>
 
-            <a 
-              href="https://app.adjust.com/1ze4hzgh?campaign=Learnr_Website" 
+            {/* QR Code */}
+            <div className="bg-white rounded-2xl p-3 mb-4">
+              <img
+                src={QR_URL}
+                alt="Scan to download Learnr"
+                className="w-40 h-40"
+              />
+            </div>
+
+            <p className="text-gray-500 text-xs mb-5">
+              📱 Phone se scan karo — seedha Play Store pe jayega
+            </p>
+
+            {/* Fallback direct link */}
+            <a
+              href={PLAY_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}
-              className="w-full bg-gradient-to-r from-[#B18B3C] to-[#C9A355] text-white py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 relative z-10 group"
+              className="w-full bg-gradient-to-r from-[#B18B3C] to-[#C9A355] text-[#0B0C10] py-3.5 rounded-full font-black text-base hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+              style={{ boxShadow: '0 5px 0 #7a5e28' }}
             >
-              <Download size={22} className="group-hover:animate-bounce" />
-              Download the App
+              ↓ Abhi Download Karo
             </a>
-            
-            <p className="text-xs text-gray-500 mt-4 font-medium">Native Experience</p>
           </motion.div>
         </div>
       )}
