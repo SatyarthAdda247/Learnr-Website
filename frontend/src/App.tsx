@@ -139,15 +139,15 @@ function App() {
     <div className="bg-[#0B0C10] min-h-screen font-sans text-gray-100 selection:bg-[#B18B3C] selection:text-white">
       
       {/* Top Header Navigation */}
-      <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0B0C10] border-b border-white/10 py-2' : 'bg-gradient-to-b from-[#0B0C10] via-[#0B0C10]/95 to-transparent py-2'}`}>
+      <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0B0C10] border-b border-white/10 py-4' : 'bg-gradient-to-b from-[#0B0C10] via-[#0B0C10]/95 to-transparent py-4'}`}>
         <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 flex justify-between items-center">
           
           {/* Logo & Brand */}
-          <div className="flex items-center gap-2.5 cursor-pointer">
-            <img src="/images/learnrlogo.jpeg" alt="Learnr App Logo" className="w-8 h-8 object-cover rounded-lg" />
+          <div className="flex items-center gap-3 cursor-pointer">
+            <img src="/images/learnrlogo.jpeg" alt="Learnr App Logo" className="w-11 h-11 object-cover rounded-xl" />
             <div className="flex flex-col">
-              <span className="text-lg font-black tracking-tight text-white leading-none">Learnr</span>
-              <span className="text-[10px] font-semibold text-gray-300 leading-none mt-0.5">
+              <span className="text-2xl font-black tracking-tight text-white leading-none">Learnr</span>
+              <span className="text-xs font-semibold text-gray-300 leading-none mt-1">
                 By <span className="text-red-500 font-black">Adda</span><span className="font-black">Education</span>
               </span>
             </div>
@@ -163,7 +163,7 @@ function App() {
             <img
               src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
               alt="Get it on Google Play"
-              className="h-9 w-auto"
+              className="h-12 w-auto"
             />
           </a>
         </div>
@@ -181,7 +181,7 @@ function App() {
       <DownloadPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
       {/* ══ TESTIMONIALS ══ */}
-      <section className="py-16 px-6 sm:px-8 xl:px-12 max-w-screen-2xl mx-auto overflow-hidden">
+      <section className="py-16 px-6 sm:px-8 xl:px-12 max-w-screen-2xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-12"
         >
@@ -191,10 +191,10 @@ function App() {
           <p className="text-gray-500 mt-2 text-sm">Join 1 Crore+ learners already on Learnr</p>
         </motion.div>
 
-        {/* Auto-scrolling strip — duplicated for seamless loop */}
-        <div className="relative">
+        {/* Auto-scrolling strip */}
+        <div className="relative overflow-hidden">
           <motion.div
-            className="flex gap-4"
+            className="flex gap-4 pb-4"
             animate={{ x: ['0%', '-50%'] }}
             transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
             style={{ width: 'max-content' }}
