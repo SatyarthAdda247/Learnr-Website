@@ -183,19 +183,10 @@ function App() {
       <DownloadPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
       {/* Footer */}
-      <footer className="relative overflow-hidden mt-16 px-6 sm:px-10 py-16 bg-[#0E0E16]">
-        <svg className="absolute right-0 top-0 h-full opacity-5 pointer-events-none" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M150 20 L280 270 L20 270 Z" stroke="#B8964A" strokeWidth="3" fill="none" />
-          <path d="M100 190 L200 190" stroke="#B8964A" strokeWidth="3" />
-        </svg>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black leading-tight tracking-tight text-white mb-8">
-            Roz ek kadam.<br />Bas rukna nahi hai.
-          </h2>
-          <p className="text-base md:text-lg font-semibold text-[#B8964A] flex items-center gap-2">
-            Made with <span className="text-xl">♥</span> in BHARAT
-          </p>
-        </div>
+      <footer className="py-8 px-8 xl:px-12 border-t border-white/5">
+        <p className="text-sm font-semibold text-[#B8964A] flex items-center gap-2">
+          Made with <span className="text-xl">♥</span> in BHARAT
+        </p>
       </footer>
 
     </div>
