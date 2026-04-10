@@ -155,7 +155,7 @@ function App() {
 
           {/* Play Store badge */}
           <a
-            href="https://play.google.com/store/apps/details?id=com.adda247.gold"
+            href="https://app.adjust.com/1zetqonb?campaign=Website"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-90 transition-opacity hidden sm:block"
@@ -256,7 +256,7 @@ function App() {
           </h2>
           <p className="text-gray-500 text-base">Shuruaat aaj se karo. Learnr ke saath, roz thoda aage badho.</p>
           <div className="flex justify-center pt-2">
-            <a href="https://play.google.com/store/apps/details?id=com.adda247.gold" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+            <a href="https://app.adjust.com/1zetqonb?campaign=Website" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
               <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                 alt="Get it on Google Play" className="h-14 w-auto" />
             </a>

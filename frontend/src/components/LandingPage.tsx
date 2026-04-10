@@ -15,7 +15,7 @@ const IMAGES = [
 
 const N = IMAGES.length;
 const STRIP = [...IMAGES, ...IMAGES, ...IMAGES];
-const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.adda247.gold';
+const PLAY_URL = 'https://app.adjust.com/1zetqonb?campaign=Website';
 const BADGE_URL = 'https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png';
 
 export const LandingPage = (_: LandingPageProps) => {

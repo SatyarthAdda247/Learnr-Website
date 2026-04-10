@@ -6,7 +6,7 @@ interface DownloadPopupProps {
   onClose: () => void;
 }
 
-const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.adda247.gold';
+const PLAY_URL = 'https://app.adjust.com/1zetqonb?campaign=Website';
 // QR code via Google Charts API — encodes the Play Store URL
 const QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(PLAY_URL)}&bgcolor=0B0C10&color=ffffff&margin=10`;
 
