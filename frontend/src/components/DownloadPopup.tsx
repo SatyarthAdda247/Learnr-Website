@@ -56,21 +56,9 @@ export const DownloadPopup = ({ isOpen, onClose }: DownloadPopupProps) => {
               />
             </div>
 
-            <p className="text-gray-500 text-xs mb-5">
+            <p className="text-gray-500 text-xs">
               📱 Phone se scan karo — seedha Play Store pe jayega
             </p>
-
-            {/* Fallback direct link */}
-            <a
-              href={PLAY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={onClose}
-              className="w-full bg-gradient-to-r from-[#B18B3C] to-[#C9A355] text-[#0B0C10] py-3.5 rounded-full font-black text-base hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
-              style={{ boxShadow: '0 5px 0 #7a5e28' }}
-            >
-              ↓ Abhi Download Karo
-            </a>
           </motion.div>
         </div>
       )}

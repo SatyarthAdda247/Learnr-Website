@@ -147,9 +147,6 @@ function App() {
             <img src="/images/learnrlogo.jpeg" alt="Learnr App Logo" className="w-11 h-11 object-cover rounded-xl" />
             <div className="flex flex-col">
               <span className="text-2xl font-black tracking-tight text-white leading-none">Learnr</span>
-              <span className="text-xs font-semibold text-gray-300 leading-none mt-1">
-                By <span className="text-red-500 font-black">Adda</span><span className="font-black">Education</span>
-              </span>
             </div>
           </div>
 
@@ -256,7 +253,11 @@ function App() {
           </h2>
           <p className="text-gray-500 text-base">Shuruaat aaj se karo. Learnr ke saath, roz thoda aage badho.</p>
           <div className="flex justify-center pt-2">
-            <a href="https://app.adjust.com/1zetqonb?campaign=Website" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+            <button onClick={() => setIsPopupOpen(true)} className="hover:opacity-90 transition-opacity hidden sm:block">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                alt="Get it on Google Play" className="h-14 w-auto" />
+            </button>
+            <a href="https://app.adjust.com/1zetqonb?campaign=Website" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity sm:hidden">
               <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                 alt="Get it on Google Play" className="h-14 w-auto" />
             </a>
@@ -265,16 +266,21 @@ function App() {
       </section>
 
       {/* ══ FOOTER ══ */}
-      <footer className="py-12 px-6 sm:px-8 border-t border-white/5 text-center space-y-3">
+      <footer className="py-12 px-6 sm:px-8 border-t border-white/5 text-center space-y-4">
         <div className="flex items-center justify-center gap-3">
           <img src="/images/learnrlogo.jpeg" alt="Learnr" className="w-10 h-10 rounded-xl object-cover" />
           <span className="text-white font-black text-2xl">Learnr</span>
         </div>
-        <p className="text-gray-500 text-sm">By METIS EDUVENTURES PRIVATE LIMITED (Adda Education)</p>
         <p className="text-gray-500 text-sm">
           <a href="mailto:support.learnr@adda247.com" className="hover:text-white transition-colors">support.learnr@adda247.com</a>
           {' · '}Gurugram, Haryana, India
         </p>
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+          <a href="https://www.learnr.co.in/privacy-policy.html" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="https://www.learnr.co.in/term-of-use.html" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">Terms of Use</a>
+          <a href="https://www.learnr.co.in/support.html" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">Support</a>
+          <a href="https://www.learnr.co.in/delete-account.html" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">Delete Account</a>
+        </div>
       </footer>
 
     </div>

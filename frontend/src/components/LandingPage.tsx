@@ -18,7 +18,7 @@ const STRIP = [...IMAGES, ...IMAGES, ...IMAGES];
 const PLAY_URL = 'https://app.adjust.com/1zetqonb?campaign=Website';
 const BADGE_URL = 'https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png';
 
-export const LandingPage = (_: LandingPageProps) => {
+export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
   // Desktop slideshow state
   const [pos, setPos] = useState(N);
   const [skipAnim, setSkipAnim] = useState(false);
@@ -168,8 +168,7 @@ export const LandingPage = (_: LandingPageProps) => {
               </a>
               <a href={PLAY_URL} target="_blank" rel="noopener noreferrer">
                 <img src={BADGE_URL} alt="Get it on Google Play" className="h-11 w-auto" />
-              </a>
-            </motion.div>
+              </a>            </motion.div>
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.35 }}>
               <RatingRow />
@@ -259,15 +258,16 @@ export const LandingPage = (_: LandingPageProps) => {
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.45 }}
               className="flex flex-wrap items-center gap-4"
             >
-              <a href={PLAY_URL} target="_blank" rel="noopener noreferrer"
+              <button
+                onClick={onGetStarted}
                 className="flex items-center gap-2 px-7 py-3.5 bg-[#B8964A] text-[#0B0C10] font-black text-base rounded-full hover:opacity-90 transition-opacity"
                 style={{ boxShadow: '0 6px 0 #7a5e28' }}
               >
                 ↓ Download App
-              </a>
-              <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+              </button>
+              <button onClick={onGetStarted} className="hover:opacity-90 transition-opacity">
                 <img src={BADGE_URL} alt="Get it on Google Play" className="h-12 w-auto" />
-              </a>
+              </button>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.55 }}>
