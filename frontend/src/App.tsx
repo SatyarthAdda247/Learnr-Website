@@ -151,10 +151,8 @@ function App() {
           </div>
 
           {/* Play Store badge */}
-          <a
-            href="https://app.adjust.com/1zetqonb?campaign=Website"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setIsPopupOpen(true)}
             className="hover:opacity-90 transition-opacity hidden sm:block"
           >
             <img
@@ -162,7 +160,7 @@ function App() {
               alt="Get it on Google Play"
               className="h-12 w-auto"
             />
-          </a>
+          </button>
         </div>
       </header>
       <LandingPage onGetStarted={() => setIsPopupOpen(true)} />
