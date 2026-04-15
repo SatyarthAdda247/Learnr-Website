@@ -117,13 +117,13 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
         <span className={`text-yellow-400 opacity-40 ${size === 'base' ? 'text-lg' : 'text-sm'}`}>★</span>
       </div>
       <span className={`text-white font-black ${size === 'base' ? 'text-sm' : 'text-xs'}`}>4.6</span>
-      <span className={`text-gray-500 ${size === 'base' ? 'text-sm' : 'text-xs'}`}>· 10K+ downloads</span>
+      <span className={`text-gray-500 ${size === 'base' ? 'text-sm' : 'text-xs'}`}>· 10L+ downloads</span>
     </div>
   );
 
   const Stats = ({ gap = 'gap-8', textSize = 'text-2xl', labelSize = 'text-[10px]' }: { gap?: string; textSize?: string; labelSize?: string }) => (
     <div className={`flex ${gap} pt-3 border-t border-white/5`}>
-      {[{ value: '10K+', label: 'Active Learners' }, { value: '12+', label: 'Languages' }, { value: '50K+', label: 'Hrs Content' }].map(s => (
+      {[{ value: '10L+', label: 'Active Learners' }, { value: '12+', label: 'Languages' }, { value: '50K+', label: 'Hrs Content' }].map(s => (
         <div key={s.label}>
           <div className={`${textSize} font-black text-white`}>{s.value}</div>
           <div className={`${labelSize} text-gray-500 uppercase tracking-wider mt-0.5`}>{s.label}</div>
