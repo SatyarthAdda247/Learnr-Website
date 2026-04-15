@@ -1,8 +1,21 @@
-FROM node:20-alpine
+# FROM node:20-alpine
+# WORKDIR /app
+# COPY frontend/package.json frontend/package-lock.json ./
+# RUN npm install --legacy-peer-deps
+# COPY frontend/ .
+# RUN npm run build
+# EXPOSE 4173
+# CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
+
+
+FROM node:20-alpine AS builder
 WORKDIR /app
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm install --legacy-peer-deps
 COPY frontend/ .
 RUN npm run build
-EXPOSE 4173
-CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
+
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html/gold
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
