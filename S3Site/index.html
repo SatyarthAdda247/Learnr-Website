@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnr - Learn Smarter, Not Harder</title>
+    <meta name="description" content="Daily learning in 12+ Indian languages. From exam prep to life skills, powered by Riya AI.">
+    <meta name="keywords" content="learning, education, exam prep, Indian languages, AI assistant">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://learnr.co.in/">
+    <meta property="og:title" content="Learnr - Learn Smarter, Not Harder">
+    <meta property="og:description" content="Daily learning in 12+ Indian languages. From exam prep to life skills, powered by Riya AI.">
+    <meta property="og:image" content="images/learnrlogo.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://learnr.co.in/">
+    <meta property="twitter:title" content="Learnr - Learn Smarter, Not Harder">
+    <meta property="twitter:description" content="Daily learning in 12+ Indian languages. From exam prep to life skills, powered by Riya AI.">
+    <meta property="twitter:image" content="images/learnrlogo.jpeg">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="meta/manifest.json">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/learnrlogo.jpeg">
+    <link rel="apple-touch-icon" href="images/learnrlogo.jpeg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body class="bg-[#0B0C10] min-h-screen font-sans text-gray-100 selection:bg-[#B18B3C] selection:text-white">
+    
+    <!-- Header Navigation -->
+    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="max-w-screen-2xl mx-auto px-6 sm:px-8 flex justify-between items-center">
+            <!-- Logo & Brand -->
+            <div class="flex items-center gap-3 cursor-pointer">
+                <img src="images/learnrlogo.jpeg" alt="Learnr App Logo" class="w-11 h-11 object-cover rounded-xl" />
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black tracking-tight text-white leading-none">Learnr</span>
+                </div>
+            </div>
+
+            <!-- Play Store badge -->
+            <button id="header-download-btn" class="hover:opacity-90 transition-opacity hidden sm:block">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                     alt="Get it on Google Play" class="h-12 w-auto" />
+            </button>
+        </div>
+    </header>
+
+    <!-- Landing Page Section -->
+    <section id="landing-page" class="w-full bg-[#0B0C10]">
+        <!-- Mobile Hero -->
+        <div class="lg:hidden">
+            <div class="px-6 pt-24 pb-6 space-y-4">
+                <h1 class="text-[2.6rem] font-black leading-[1.05] tracking-tighter text-white animate-slide-in">
+                    Roz ek <span class="text-[#B8964A]">kadam,</span><br />
+                    sapnon ki <span class="text-[#B8964A]">aur.</span>
+                </h1>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-sm animate-slide-in-delay-1">
+                    Daily learning in 12+ Indian languages. Exam prep to life skills,
+                    powered by <span class="text-purple-400 font-medium">Riya AI.</span>
+                </p>
+                <div class="flex flex-wrap items-center gap-3 animate-slide-in-delay-2">
+                    <a href="https://app.adjust.com/1zetqonb?campaign=Website" target="_blank" rel="noopener noreferrer"
+                       class="flex items-center gap-2 px-5 py-3 bg-[#B8964A] text-[#0B0C10] font-black text-sm rounded-full active:opacity-80"
+                       style="box-shadow: 0 4px 0 #7a5e28">
+                        ↓ Download App - Free
+                    </a>
+                    <a href="https://app.adjust.com/1zetqonb?campaign=Website" target="_blank" rel="noopener noreferrer">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
+                             alt="Get it on Google Play" class="h-11 w-auto" />
+                    </a>
+                </div>
+                <div class="flex items-center gap-4 animate-slide-in-delay-3">
+                    <div class="flex items-center gap-2">
+                        <div class="flex gap-0.5">
+                            <span class="text-yellow-400 text-sm">★</span>
+                            <span class="text-yellow-400 text-sm">★</span>
+                            <span class="text-yellow-400 text-sm">★</span>
+                            <span class="text-yellow-400 text-sm">★</span>
+                            <span class="text-yellow-400 opacity-40 text-sm">★</span>
+                        </div>
+                        <span class="text-white font-black text-xs">4.6</span>
+                        <span class="text-gray-500 text-xs">· 10L+ downloads</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <img src="images/qr-code.png" alt="QR Code to Download App" class="w-12 h-12 rounded border border-white/20" />
+                        <span class="text-gray-500 text-[10px]">Scan to Download</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Slideshow -->
+            <div id="mobile-slideshow" class="relative w-full overflow-hidden" style="height: 320px;">
+                <!-- Slideshow content will be populated by JavaScript -->
+            </div>
+            
+            <!-- Mobile Stats -->
+            <div class="px-6 pb-8">
+                <div class="flex gap-8 pt-3 border-t border-white/5 animate-slide-in-delay-4">
+                    <div>
+                        <div class="text-2xl font-black text-white">10L+</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider mt-0.5">Active Learners</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-white">12+</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider mt-0.5">Languages</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-white">50K+</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider mt-0.5">Hrs Content</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Hero -->
+        <div class="hidden lg:grid lg:grid-cols-[1fr_1fr] gap-10 items-center max-w-screen-2xl mx-auto px-8 xl:px-12 pt-32 pb-16 min-h-0">
+            <div class="space-y-7">
+                <h1 class="text-6xl xl:text-7xl font-black leading-[1.0] tracking-tighter text-white animate-slide-in">
+                    Roz ek <span class="text-[#B8964A]">kadam,</span><br />
+                    sapnon ki <span class="text-[#B8964A]">aur.</span>
+                </h1>
+                <p class="text-lg text-gray-400 max-w-md leading-relaxed animate-slide-in-delay-1">
+                    Build a daily learning habit with bite-sized content in 12+ Indian languages.
+                    From exam prep to life skills, powered by
+                    <span class="text-purple-400 font-medium">Riya, your AI assistant.</span>
+                </p>
+                <div class="flex flex-wrap items-center gap-4 animate-slide-in-delay-2">
+                    <button id="desktop-download-btn" 
+                            class="flex items-center gap-2 px-7 py-3.5 bg-[#B8964A] text-[#0B0C10] font-black text-base rounded-full hover:opacity-90 transition-opacity"
+                            style="box-shadow: 0 6px 0 #7a5e28">
+                        ↓ Download App
+                    </button>
+                    <button id="desktop-badge-btn" class="hover:opacity-90 transition-opacity">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
+                             alt="Get it on Google Play" class="h-12 w-auto" />
+                    </button>
+                    <div class="flex flex-col items-center gap-2 ml-4">
+                        <img src="images/qr-code.png" alt="QR Code to Download App" class="w-16 h-16 rounded border border-white/20" />
+                        <span class="text-gray-400 text-xs">Scan to Download</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 animate-slide-in-delay-3">
+                    <div class="flex gap-0.5">
+                        <span class="text-yellow-400 text-lg">★</span>
+                        <span class="text-yellow-400 text-lg">★</span>
+                        <span class="text-yellow-400 text-lg">★</span>
+                        <span class="text-yellow-400 text-lg">★</span>
+                        <span class="text-yellow-400 opacity-40 text-lg">★</span>
+                    </div>
+                    <span class="text-white font-black text-sm">4.6</span>
+                    <span class="text-gray-500 text-sm">· 10L+ downloads</span>
+                </div>
+                <div class="flex gap-10 pt-3 border-t border-white/5 animate-slide-in-delay-4">
+                    <div>
+                        <div class="text-3xl xl:text-4xl font-black text-white">10L+</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">Active Learners</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl xl:text-4xl font-black text-white">12+</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">Languages</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl xl:text-4xl font-black text-white">50K+</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">Hrs Content</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Slideshow -->
+            <div id="desktop-slideshow" class="relative w-full overflow-hidden rounded-2xl" style="height: 420px;">
+                <!-- Slideshow content will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <main id="content-sections" class="pb-16 max-w-screen-2xl mx-auto px-6 sm:px-8 xl:px-12 space-y-10">
+        <!-- Content sections will be populated by JavaScript -->
+    </main>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 px-6 sm:px-8 xl:px-12 max-w-screen-2xl mx-auto">
+        <div class="text-center mb-12 animate-slide-in">
+            <h2 class="text-3xl sm:text-4xl font-black text-white">
+                Learners <span class="text-[#B8964A]">Love Us</span> ❤️
+            </h2>
+            <p class="text-gray-500 mt-2 text-sm">Join 1 Crore+ learners already on Learnr</p>
+        </div>
+        
+        <!-- Auto-scrolling testimonials strip -->
+        <div class="relative overflow-hidden">
+            <div id="testimonials-strip" class="flex gap-4 pb-4 animate-auto-scroll">
+                <!-- Testimonials will be populated by JavaScript -->
+            </div>
+            <!-- Edge fades -->
+            <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0B0C10] to-transparent pointer-events-none z-10"></div>
+            <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0B0C10] to-transparent pointer-events-none z-10"></div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="final-cta" class="mx-6 sm:mx-8 xl:mx-12 mb-0 rounded-3xl bg-[#141418] border border-white/5 py-14 px-6 sm:px-12 text-center">
+        <div class="space-y-5 max-w-2xl mx-auto animate-slide-in">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+                Sirf sapne mat dekho,<br />
+                <span class="text-[#B8964A]">unhe poora bhi karo.</span>
+            </h2>
+            <p class="text-gray-500 text-base">Shuruaat aaj se karo. Learnr ke saath, roz thoda aage badho.</p>
+            <div class="flex justify-center pt-2">
+                <button id="final-cta-desktop-btn" class="hover:opacity-90 transition-opacity hidden sm:block">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                         alt="Get it on Google Play" class="h-14 w-auto" />
+                </button>
+                <a href="https://app.adjust.com/1zetqonb?campaign=Website" target="_blank" rel="noopener noreferrer" 
+                   class="hover:opacity-90 transition-opacity sm:hidden">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                         alt="Get it on Google Play" class="h-14 w-auto" />
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="py-12 px-6 sm:px-8 border-t border-white/5 text-center space-y-4">
+        <div class="flex items-center justify-center gap-3">
+            <img src="images/learnrlogo.jpeg" alt="Learnr" class="w-10 h-10 rounded-xl object-cover" />
+            <span class="text-white font-black text-2xl">Learnr</span>
+        </div>
+        <p class="text-gray-500 text-sm">
+            <a href="mailto:support.learnr@adda247.com" class="hover:text-white transition-colors">support.learnr@adda247.com</a>
+            · Gurugram, Haryana, India
+        </p>
+        <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+            <a href="https://www.learnr.co.in/privacy-policy.html" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+            <a href="https://www.learnr.co.in/term-of-use.html" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-500 hover:text-white transition-colors">Terms of Use</a>
+            <a href="https://www.learnr.co.in/support.html" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-500 hover:text-white transition-colors">Support</a>
+            <a href="https://www.learnr.co.in/delete-account.html" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-500 hover:text-white transition-colors">Delete Account</a>
+        </div>
+    </footer>
+
+    <!-- Download Popup Modal -->
+    <div id="download-popup" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center p-4">
+        <div class="bg-[#141418] rounded-2xl p-6 max-w-md w-full border border-white/10 animate-slide-in">
+            <div class="text-center space-y-4">
+                <img src="images/learnrlogo.jpeg" alt="Learnr" class="w-16 h-16 rounded-xl mx-auto" />
+                <h3 class="text-xl font-black text-white">Download Learnr App</h3>
+                <p class="text-gray-400 text-sm">Start your learning journey today with 10L+ learners</p>
+                <a href="https://app.adjust.com/1zetqonb?campaign=Website" target="_blank" rel="noopener noreferrer"
+                   class="block w-full bg-[#B8964A] text-[#0B0C10] font-black py-3 rounded-full hover:opacity-90 transition-opacity">
+                    Download Now
+                </a>
+                <button id="close-popup" class="text-gray-500 hover:text-white transition-colors text-sm">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/animations.js"></script>
+    <script src="scripts/content.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+{
+  "profile": {
+    "appName": "Learnr",
+    "tagline": "Roz ek kadam, sapnon ki aur.",
+    "description": "Daily learning in 12+ Indian languages. Exam prep to life skills, powered by Riya AI.",
+    "stats": {
+      "totalLearners": "10L+",
+      "languages": "12+",
+      "hoursContent": "50K+"
+    }
+  },
+  "slideshow": {
+    "images": [
+      "images/app-ref-1.jpeg",
+      "images/app-ref-2.jpeg",
+      "images/app-ref-3.jpeg",
+      "images/app-ref-4.jpeg",
+      "images/app-ref-5.jpeg"
+    ]
+  },
+  "sections": [
+    {
+      "id": "trending",
+      "sectionName": "Trending",
+      "sectionType": "TRENDING_TYPE",
+      "sortOrder": 1,
+      "items": [
+        {
+          "id": "69bd3220bca7b28a4d19afe6",
+          "name": "Human Evolution Journey | मानव विकास की पूरी Journey",
+          "thumbnailUrl": "images/thumbnails/HumanLineagethumbnailrow61774006815.jpg",
+          "categoryName": "Human Life",
+          "type": "VIDEO",
+          "sortOrder": 1
+        },
+        {
+          "id": "69778882e1bb35f23011b8cb",
+          "name": "Big Bang Theory Origin | Dhamaka nahi, Space का विस्तार था",
+          "thumbnailUrl": "images/thumbnails/GeographyAItouchthumbrow21769667583.jpg",
+          "categoryName": "Geography AI",
+          "type": "VIDEO",
+          "sortOrder": 2
+        },
+        {
+          "id": "69772c55587ff7e505a90079",
+          "name": "Understanding English Tenses | Tenses के 12 types की confusion खत्म",
+          "thumbnailUrl": "images/thumbnails/Englishtouchthumbrow21769639649.jpg",
+          "categoryName": "English",
+          "type": "VIDEO",
+          "sortOrder": 3
+        },
+        {
+          "id": "69777c33587ff7e505a900bd",
+          "name": "Iltutmish: Building Delhi Sultanate | Iltutmish ने Sultanate को इमारत बनाया",
+          "thumbnailUrl": "images/thumbnails/Medievalhistorytouchthumbrow31769666352.jpg",
+          "categoryName": "Medieval History AI",
+          "type": "VIDEO",
+          "sortOrder": 4
+        },
+        {
+          "id": "697b290f1a22467f7127c41e",
+          "name": "Letter Number Series | Number Letter के Logic अलग पकड़ो",
+          "thumbnailUrl": "images/thumbnails/Reasoningthumbnailrow131769679118.jpg",
+          "categoryName": "Reasoning",
+          "type": "VIDEO",
+          "sortOrder": 5
+        }
+      ]
+    },
+    {
+      "id": "flash-learning",
+      "sectionName": "Flash Learning | फ्लैश लर्निंग",
+      "sectionType": "FLASH_TYPE",
+      "sortOrder": 2,
+      "items": [
+        {
+          "id": "6977c1c3587ff7e505a90151",
+          "name": "Modern History AI",
+          "thumbnailUrl": "images/thumbnails/fe06c561-c630-45a9-82a7-4a03da0ca792.png",
+          "type": "CATEGORY",
+          "sortOrder": 1
+        },
+        {
+          "id": "6977c1ebe1bb35f23011b934",
+          "name": "Cultural Heritage",
+          "thumbnailUrl": "images/thumbnails/52dcfe2b-8546-4a66-818b-5f115239b5e0.png",
+          "type": "CATEGORY",
+          "sortOrder": 2
+        },
+        {
+          "id": "6978f0d2ec74a250f38f558e",
+          "name": "Famous Personalities",
+          "thumbnailUrl": "images/thumbnails/38a56965-eafd-45d4-9ade-f8499920dde8.png",
+          "type": "CATEGORY",
+          "sortOrder": 3
+        }
+      ]
+    },
+    {
+      "id": "synth-ancient",
+      "sectionName": "Ancient History | प्राचीन इतिहास",
+      "sectionType": "CHAPTER_TYPE",
+      "sortOrder": 3,
+      "items": [
+        {
+          "id": "6977c153587ff7e505a90145",
+          "name": "Prehistoric Age",
+          "thumbnailUrl": "images/thumbnails/168d46ee-9e3f-4400-8508-a4fa00ae9600.jpg",
+          "categoryName": "Ancient History AI",
+          "type": "SHOW",
+          "sortOrder": 1
+        },
+        {
+          "id": "6977c15f587ff7e505a90146",
+          "name": "Indus Valley Civilization",
+          "thumbnailUrl": "images/thumbnails/a9814a96-e481-49c1-b277-59c5a7d98b3b.jpg",
+          "categoryName": "Ancient History AI",
+          "type": "SHOW",
+          "sortOrder": 2
+        },
+        {
+          "id": "6977c16b587ff7e505a90147",
+          "name": "Vedic Civilization",
+          "thumbnailUrl": "images/thumbnails/76710539-ab75-4ba9-bdf8-3534252221ae.jpg",
+          "categoryName": "Ancient History AI",
+          "type": "SHOW",
+          "sortOrder": 3
+        }
+      ]
+    },
+    {
+      "id": "synth-english",
+      "sectionName": "English | अंग्रेजी",
+      "sectionType": "CHAPTER_TYPE",
+      "sortOrder": 4,
+      "items": [
+        {
+          "id": "6977aad0587ff7e505a90105",
+          "name": "Noun",
+          "thumbnailUrl": "images/thumbnails/7835c7ea-d528-452b-bebd-cc52be14b5e5.png",
+          "categoryName": "English",
+          "type": "SHOW",
+          "sortOrder": 1
+        },
+        {
+          "id": "6977aadae1bb35f23011b8ee",
+          "name": "Pronoun",
+          "thumbnailUrl": "images/thumbnails/138a31e3-317c-4f62-baeb-6be4e1a69fb5.png",
+          "categoryName": "English",
+          "type": "SHOW",
+          "sortOrder": 2
+        }
+      ]
+    },
+    {
+      "id": "synth-subjects",
+      "sectionName": "Subjects | विषय",
+      "sectionType": "LIST_TYPE",
+      "sortOrder": 5,
+      "items": [
+        {
+          "id": "69786d1f587ff7e505a9015c",
+          "name": "Science",
+          "iconUrl": "images/thumbnails/c59d3247-ff71-4347-af4a-57fa4204319c.png",
+          "type": "WRAPPER",
+          "sortOrder": 1
+        },
+        {
+          "id": "6977aaade1bb35f23011b8e9",
+          "name": "English",
+          "iconUrl": "images/thumbnails/fc45eaef-1cdb-46b0-91cf-6753917d5047.png",
+          "type": "CATEGORY",
+          "sortOrder": 2
+        },
+        {
+          "id": "697b5bba1a22467f7127c45b",
+          "name": "Reasoning",
+          "iconUrl": "images/thumbnails/ff6a214c-18a9-4665-8be9-aa0cc48e0ac0.png",
+          "type": "CATEGORY",
+          "sortOrder": 3
+        },
+        {
+          "id": "697b5bf71a22467f7127c462",
+          "name": "Maths",
+          "iconUrl": "images/thumbnails/68f8ab88-2b20-40f9-ae7c-0c0aa4a7b091.jpg",
+          "type": "CATEGORY",
+          "sortOrder": 4
+        },
+        {
+          "id": "6974a72fe1bb35f23011b817",
+          "name": "Geography",
+          "iconUrl": "images/thumbnails/5f10a1bd-2aa8-49a1-93da-d753a9fc70f7.png",
+          "type": "CATEGORY",
+          "sortOrder": 5
+        }
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "initials": "PS",
+      "name": "Priya Sharma",
+      "location": "Delhi",
+      "stars": 5,
+      "text": "Content shorts concept is 🔥! I watch 2-3 videos while commuting and I've already improved my GK so much. Feels like scrolling reels but actually learning something!"
+    },
+    {
+      "initials": "RV",
+      "name": "Rahul Verma",
+      "location": "Lucknow",
+      "stars": 5,
+      "text": "SSC prep was so boring before Learnr. Now I take quizzes daily and it feels like playing a game. Scored 150+ in my last mock — all thanks to this app!"
+    },
+    {
+      "initials": "AP",
+      "name": "Ananya Patel",
+      "location": "Ahmedabad",
+      "stars": 5,
+      "text": "The Hindi + English mix makes it so easy to understand. History topics that I used to skip — now I actually enjoy watching them. Best learning app for Indian students."
+    },
+    {
+      "initials": "VS",
+      "name": "Vikram Singh",
+      "location": "Jaipur",
+      "stars": 4,
+      "text": "Riya AI assistant is genuinely helpful. I ask doubts at 2 AM and get instant answers. Quiz after every topic makes sure I actually remember what I learned."
+    },
+    {
+      "initials": "SG",
+      "name": "Sneha Gupta",
+      "location": "Patna",
+      "stars": 5,
+      "text": "Exam preparation has never been this fun. The bite-sized format is perfect — no more sitting through 2-hour lectures. My friends are hooked on the Art & Culture section!"
+    },
+    {
+      "initials": "AM",
+      "name": "Arjun Mishra",
+      "location": "Bhopal",
+      "stars": 5,
+      "text": "I failed my last two attempts at SSC CGL. After using Learnr for 3 months, I finally cleared it. The daily quiz habit made all the difference. Highly recommend!"
+    },
+    {
+      "initials": "NK",
+      "name": "Neha Kumari",
+      "location": "Ranchi",
+      "stars": 5,
+      "text": "Geography and History used to be my weakest subjects. Learnr's short videos explained everything so clearly. My score jumped from 45 to 78 in just 6 weeks!"
+    },
+    {
+      "initials": "RT",
+      "name": "Rohan Tiwari",
+      "location": "Kanpur",
+      "stars": 4,
+      "text": "The Hinglish content is a game changer. I never felt comfortable with pure English apps. Learnr speaks my language and that makes learning so much more natural."
+    },
+    {
+      "initials": "DM",
+      "name": "Divya Mehta",
+      "location": "Surat",
+      "stars": 5,
+      "text": "I use Learnr during my lunch break every day. 15 minutes of focused learning and I feel so productive. The streak feature keeps me coming back every single day!"
+    },
+    {
+      "initials": "KS",
+      "name": "Karan Sharma",
+      "location": "Chandigarh",
+      "stars": 5,
+      "text": "Best investment of my time. The content quality is top-notch and Riya AI answers my doubts instantly. It's like having a personal tutor available 24/7 for free."
+    }
+  ],
+  "cta": {
+    "title": "Sirf sapne mat dekho,",
+    "subtitle": "unhe poora bhi karo.",
+    "description": "Shuruaat aaj se karo. Learnr ke saath, roz thoda aage badho.",
+    "playStoreUrl": "https://app.adjust.com/1zetqonb?campaign=Website"
+  },
+  "footer": {
+    "email": "support.learnr@adda247.com",
+    "location": "Gurugram, Haryana, India",
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "url": "https://www.learnr.co.in/privacy-policy.html"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "https://www.learnr.co.in/term-of-use.html"
+      },
+      {
+        "text": "Support",
+        "url": "https://www.learnr.co.in/support.html"
+      },
+      {
+        "text": "Delete Account",
+        "url": "https://www.learnr.co.in/delete-account.html"
+      }
+    ]
+  }
+}

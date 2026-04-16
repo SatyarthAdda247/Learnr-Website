@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://learnr.co.in/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow important pages
+Allow: /images/
+Allow: /styles/
+Allow: /scripts/
