@@ -1,13 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+:root {
+  --font-size: 16px;
+  
+  /* Adda247 Gold Typography Colors */
+  --chinese-black: 0 0% 7%;
+  --graphite-grey: 0 0% 20%;
+  --slate-grey: 0 0% 40%;
+  --cool-grey: 0 0% 60%;
+  --white: 0 0% 100%;
+  
+  /* Adda247 Gold Background Colors */
+  --creamy-beige: 40 35% 94%;
+  --antique-white: 40 25% 97%;
+  --carbon-grey: 0 0% 12%;
+  
+  /* Adda247 Gold System Colors */
+  --mustard-brown: 40 85% 45%;
+  --olive-brown: 35 75% 35%;
+  --gold-light: 45 90% 55%;
+  --gold-dark: 35 80% 40%;
+  
+  /* Semantic tokens */
+  --background: var(--white);
+  --foreground: var(--chinese-black);
+  --card: var(--white);
+  --card-foreground: var(--chinese-black);
+  --popover: var(--white);
+  --popover-foreground: var(--chinese-black);
+  --primary: var(--mustard-brown);
+  --primary-foreground: var(--white);
+  --secondary: var(--antique-white);
+  --secondary-foreground: var(--chinese-black);
+  --muted: var(--antique-white);
+  --muted-foreground: var(--slate-grey);
+  --accent: var(--creamy-beige);
+  --accent-foreground: var(--chinese-black);
+  --destructive: 0 84% 60%;
+  --destructive-foreground: var(--white);
+  --border: 40 20% 88%;
+  --input: var(--antique-white);
+  --ring: var(--mustard-brown);
+  
+  --radius: 16px;
+  --radius-button: 12px;
+  
+  /* Shadows */
+  --shadow-soft: 0px 4px 14px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  
+  /* Gold Gradient */
+  --gold-gradient: linear-gradient(135deg, hsl(45, 90%, 55%) 0%, hsl(35, 80%, 40%) 100%);
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  /* Adda247 specific colors */
+  --color-chinese-black: hsl(var(--chinese-black));
+  --color-graphite-grey: hsl(var(--graphite-grey));
+  --color-slate-grey: hsl(var(--slate-grey));
+  --color-cool-grey: hsl(var(--cool-grey));
+  --color-creamy-beige: hsl(var(--creamy-beige));
+  --color-antique-white: hsl(var(--antique-white));
+  --color-carbon-grey: hsl(var(--carbon-grey));
+  --color-mustard-brown: hsl(var(--mustard-brown));
+  --color-olive-brown: hsl(var(--olive-brown));
+  --color-gold-light: hsl(var(--gold-light));
+  --color-gold-dark: hsl(var(--gold-dark));
+  
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 8px);
+}
+
+@layer base {
+  * {
+    @apply border;
   }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+
+  body {
+    @apply bg-white text-black overflow-x-hidden;
+    font-family: 'Onest', sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p, span, a, button, label, input, textarea {
+    font-family: 'Onest', sans-serif;
+  }
+}
+
+/* Adda247 Gold Utilities */
+.gold-gradient {
+  background: var(--gold-gradient);
+}
+
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+
+.bg-creamy-beige {
+  background-color: hsl(var(--creamy-beige));
+}
+
+.bg-antique-white {
+  background-color: hsl(var(--antique-white));
+}
+
+.bg-carbon-grey {
+  background-color: hsl(var(--carbon-grey));
+}
+
+.text-chinese-black {
+  color: hsl(var(--chinese-black));
+}
+
+.text-graphite-grey {
+  color: hsl(var(--graphite-grey));
+}
+
+.text-slate-grey {
+  color: hsl(var(--slate-grey));
+}
+
+.text-cool-grey {
+  color: hsl(var(--cool-grey));
+}
+
+.text-mustard-brown {
+  color: hsl(var(--mustard-brown));
+}
+
+/* Sticky header transition */
+.header-scrolled {
+  background-color: hsl(var(--white));
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Card styles */
+.adda-card {
+  background: hsl(var(--white));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.adda-card:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-4px);
+}
+
+/* Trust badge pill */
+.trust-pill {
+  background: hsl(var(--white));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Smooth transitions */
+.gentle-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Wave pattern for hero */
+.wave-pattern {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f5f0e8' fill-opacity='0.3' d='M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,149.3C672,139,768,149,864,170.7C960,192,1056,224,1152,218.7C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+/* Clean scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--antique-white));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--cool-grey));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--slate-grey));
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
   }
 }
